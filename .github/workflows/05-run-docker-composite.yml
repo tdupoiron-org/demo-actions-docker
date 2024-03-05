@@ -23,4 +23,4 @@ jobs:
       - name: Run Docker Composite
         uses: ./docker-composite
         with:
-          docker-image: docker://ghcr.io/tdupoiron-org/tdupoiron-org/demo-actions-docker
+          docker-image: ghcr.io/tdupoiron-org/tdupoiron-org/demo-actions-docker

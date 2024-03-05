@@ -10,4 +10,4 @@ runs:
   steps:
     - name: Run Docker Image
       #uses: docker://ghcr.io/tdupoiron-org/tdupoiron-org/demo-actions-docker:latest
-      uses: docker://$INPUT_DOCKER-IMAGE
+      uses: docker://${{ inputs.docker-image }}
