@@ -21,3 +21,5 @@ jobs:
         uses: docker://ghcr.io/tdupoiron-org/tdupoiron-org/demo-actions-docker
         with:
           args: "tom"
+
+      # This use case is not supported because the action image is pulled from the ghcr at the beginning of the job

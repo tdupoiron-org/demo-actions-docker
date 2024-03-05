@@ -25,4 +25,4 @@ runs:
         password: ${{ inputs.docker-registry-password }}
     
     - name: Run Docker Image
-      uses: docker://${{ inputs.docker-image }}
+      uses: docker://ghcr.io/tdupoiron-org/tdupoiron-org/demo-actions-docker:latest
