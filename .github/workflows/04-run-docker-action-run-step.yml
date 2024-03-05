@@ -18,4 +18,4 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run Docker Action
-        run: docker run ghcr.io/tdupoiron-org/tdupoiron-org/demo-actions-docker:1709629510 tom
+        run: docker run ghcr.io/tdupoiron-org/tdupoiron-org/demo-actions-docker tom
