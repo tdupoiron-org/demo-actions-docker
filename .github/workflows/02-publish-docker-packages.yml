@@ -1,0 +1,46 @@
+name: Publish Docker Package
+
+on:
+  push:
+    branches: [ "main" ]
+    
+  workflow_dispatch:
+
+jobs:
+
+  generate-date:
+    outputs:
+      date: ${{ steps.date.outputs.date }}
+
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Get Date in seconds
+        id: date
+        run: echo "::set-output name=date::$(date +%s)"
+
+  build-and-push:
+    needs: generate-date
+
+    env:
+      image-name: ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:${{ needs.generate-date.outputs.date }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+       
+      - name: Build docker image
+        run: docker build . --file Dockerfile --tag ${{ env.image-name }}
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push docker image
+        run: docker push ${{ env.image-name }}
