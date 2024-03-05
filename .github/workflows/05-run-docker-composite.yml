@@ -1,4 +1,4 @@
-name: 04 - Run Docker Composite
+name: 05 - Run Docker Composite
 run-name: Run Docker Composite
 
 on:

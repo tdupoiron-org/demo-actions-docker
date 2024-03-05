@@ -1,0 +1,21 @@
+name: 04 - Run Docker Action run step
+run-name: Run Docker Action Run Step
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  run-docker-action:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run Docker Action
+        run: docker run ghcr.io/tdupoiron-org/tdupoiron-org/demo-actions-docker:1709629510 tom
