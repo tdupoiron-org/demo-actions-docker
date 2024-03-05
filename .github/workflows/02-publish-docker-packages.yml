@@ -1,4 +1,5 @@
-name: Publish Docker Package
+name: 02 - Publish Docker Package
+run-name: public-docker-package
 
 on:
   push:

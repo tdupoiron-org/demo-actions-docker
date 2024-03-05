@@ -1,4 +1,4 @@
-name: Hello World Docker Action
+name: 01 - Hello World Docker Action
 run-name: hello-world-docker-action
 
 on: [workflow_dispatch]
