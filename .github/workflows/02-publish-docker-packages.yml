@@ -31,10 +31,11 @@ jobs:
     steps:
 
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
        
       - name: Build docker image
         run: docker build . --file Dockerfile --tag ${{ env.image-name }}
+        working-directory: docker-action
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v1
