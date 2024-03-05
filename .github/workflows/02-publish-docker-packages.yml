@@ -25,6 +25,7 @@ jobs:
 
     env:
       image-name: ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:${{ needs.generate-date.outputs.date }}
+      image-name-latest: ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest
 
     runs-on: ubuntu-latest
 
@@ -34,7 +35,7 @@ jobs:
         uses: actions/checkout@v4
        
       - name: Build docker image
-        run: docker build . --file Dockerfile --tag ${{ env.image-name }} --tag latest
+        run: docker build . --file Dockerfile --tag ${{ env.image-name }} --tag ${{ env.image-name-latest }}
         working-directory: docker-action
 
       - name: Login to GitHub Container Registry
