@@ -1,0 +1,19 @@
+name: 03 - Run Docker Action
+run-name: Run Docker Action
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  run-docker-action:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Run Docker Composite
+        uses: ./docker-composite
+        with:
+          docker-registry-endpoint: ghcr.io
+          docker-registry-username: ${{ github.repository_owner }}
+          docker-registry-password: ${{ secrets.GITHUB_TOKEN }}
+          docker-image: docker://ghcr.io/tdupoiron-org/tdupoiron-org/demo-actions-docker:1709629510
