@@ -11,6 +11,6 @@ jobs:
     steps:
 
       - name: Run Docker Action
-        uses: docker:ghcr.io/tdupoiron-org/tdupoiron-org/demo-actions-docker:1709629510
+        uses: docker://ghcr.io/tdupoiron-org/tdupoiron-org/demo-actions-docker:1709629510
         with:
           args: "tom"
