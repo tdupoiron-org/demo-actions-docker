@@ -13,10 +13,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Login to Docker Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Run Docker Composite
         uses: ./docker-composite
         with:
-          docker-registry-endpoint: ghcr.io
-          docker-registry-username: ${{ github.repository_owner }}
-          docker-registry-password: ${{ secrets.GITHUB_TOKEN }}
           docker-image: docker://ghcr.io/tdupoiron-org/tdupoiron-org/demo-actions-docker

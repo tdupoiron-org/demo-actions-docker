@@ -1,15 +1,6 @@
 name: 'Run Docker Action'
 
 inputs:
-  docker-registry-endpoint:
-    description: 'Docker registry endpoint'
-    required: true
-  docker-registry-username:
-    description: 'Docker registry username'
-    required: true
-  docker-registry-password:
-    description: 'Docker registry password'
-    required: true
   docker-image:
     description: 'Image to pull'
     required: true
@@ -17,12 +8,5 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Login to Docker Registry
-      uses: docker/login-action@v3
-      with:
-        registry: ${{ inputs.docker-registry-endpoint }}
-        username: ${{ inputs.docker-registry-username }}
-        password: ${{ inputs.docker-registry-password }}
-    
     - name: Run Docker Image
       uses: docker://ghcr.io/tdupoiron-org/tdupoiron-org/demo-actions-docker:latest
