@@ -1,13 +1,7 @@
 name: 'Run Docker Action'
 
-inputs:
-  docker-image:
-    description: 'Image to pull'
-    required: true
-
 runs:
   using: "composite"
   steps:
     - name: Run Docker Image
-      #uses: docker://ghcr.io/tdupoiron-org/tdupoiron-org/demo-actions-docker:latest
-      uses: docker://$INPUT_DOCKER-IMAGE
+      uses: docker://ghcr.io/tdupoiron-org/tdupoiron-org/demo-actions-docker:latest
