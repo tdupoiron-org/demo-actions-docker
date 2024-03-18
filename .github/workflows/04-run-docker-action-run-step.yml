@@ -8,9 +8,6 @@ jobs:
 
   run-docker-action:
     runs-on: ubuntu-latest
-
-    container: 
-      image: ubuntu
       
     steps:
 
