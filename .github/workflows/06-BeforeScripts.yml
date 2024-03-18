@@ -5,9 +5,8 @@ on:
   workflow_dispatch:
 
 env:
-  ACTIONS_RUNNER_HOOK_JOB_STARTED: /home/ec2-user/docker-login.sh
-  ACTIONS_RUNNER_HOOK_JOB_COMPLETED: /home/ec2-user/docker-logout.sh
-
+  DOCKER_REGISTRY_USER: tdupoiron
+  
 jobs:
 
   run-docker-action:
