@@ -1,0 +1,16 @@
+name: 03 - Run Before Script and Docker Step
+run-name: Run Before Script and Docker Step
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  run-docker-action:
+    runs-on: self-hosted
+    steps:
+    
+      - name: Run Docker Action
+        uses: docker://ghcr.io/tdupoiron-org/tdupoiron-org/demo-actions-docker
+        with:
+          args: "tom"
