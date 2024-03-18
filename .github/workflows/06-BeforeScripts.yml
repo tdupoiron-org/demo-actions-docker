@@ -4,6 +4,10 @@ run-name: Run Before Script and Docker Step
 on:
   workflow_dispatch:
 
+env:
+  ACTIONS_RUNNER_HOOK_JOB_STARTED: /home/ec2-user/docker-login.sh
+  ACTIONS_RUNNER_HOOK_JOB_COMPLETED: /home/ec2-user/docker-logout.sh
+
 jobs:
 
   run-docker-action:
