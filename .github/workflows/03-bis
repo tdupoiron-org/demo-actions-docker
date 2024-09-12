@@ -1,5 +1,5 @@
-name: 03 - Run Docker Action Docker Step
-run-name: Run Docker Action Docker Step
+name: 03 - BIS
+run-name: 3 BIS
 
 on:
   workflow_dispatch:
