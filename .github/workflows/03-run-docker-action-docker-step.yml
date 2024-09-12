@@ -7,7 +7,7 @@ on:
 jobs:
 
   run-docker-action:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
 
       - name: Login to GitHub Container Registry
